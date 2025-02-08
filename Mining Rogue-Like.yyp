@@ -41,6 +41,8 @@
     {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},},
     {"id":{"name":"oTarget","path":"objects/oTarget/oTarget.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"drawCirc","path":"scripts/drawCirc/drawCirc.yy",},},
+    {"id":{"name":"removeCirc","path":"scripts/removeCirc/removeCirc.yy",},},
     {"id":{"name":"shDrawWithColor","path":"shaders/shDrawWithColor/shDrawWithColor.yy",},},
     {"id":{"name":"sLightDecay","path":"shaders/sLightDecay/sLightDecay.yy",},},
     {"id":{"name":"sBlock","path":"sprites/sBlock/sBlock.yy",},},

@@ -22,6 +22,7 @@
     {"name":"oEnvironmentPar","order":2,"path":"objects/oEnvironmentPar/oEnvironmentPar.yy",},
     {"name":"oGameControl","order":4,"path":"objects/oGameControl/oGameControl.yy",},
     {"name":"oTarget","order":3,"path":"objects/oTarget/oTarget.yy",},
+    {"name":"drawCirc","order":1,"path":"scripts/drawCirc/drawCirc.yy",},
     {"name":"shDrawWithColor","order":1,"path":"shaders/shDrawWithColor/shDrawWithColor.yy",},
     {"name":"sBlock","order":4,"path":"sprites/sBlock/sBlock.yy",},
     {"name":"sDebris","order":7,"path":"sprites/sDebris/sDebris.yy",},

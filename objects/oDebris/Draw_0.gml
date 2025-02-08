@@ -1,7 +1,6 @@
 shader_set(shDrawWithColor)
 draw_sprite_ext(sDebris,image_index,x,y,1,1,dir,drawColor,(deathtimer==-1?1:deathtimer))
 shader_reset()
-show_debug_message((deathtimer==-1?1:deathtimer))
 
 x += lengthdir_x(mag*delta_time/1000000,dir);
 y += lengthdir_y(mag*delta_time/1000000,dir);
