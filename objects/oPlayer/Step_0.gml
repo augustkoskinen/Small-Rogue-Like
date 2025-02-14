@@ -20,12 +20,16 @@ if (addx != 0 || addy != 0){
 	if(collision_line(x+addx,y,x,y,oEnvironmentPar,true,true)||
 		collision_line(x+addx,y,x,y,layer_tilemap_get_id("Blocks"),true,true)||
 		place_meeting(x+addx,y,oEnvironmentPar)||
-		place_meeting(x+addx,y,layer_tilemap_get_id("Blocks"))
+		place_meeting(x+addx,y,layer_tilemap_get_id("Blocks"))||
+		bbox_right+addx>room_width||
+		bbox_left-addx<0
 	) {
 		while (!collision_line(x+0.5*(addx/abs(addx)),y,x,y,oEnvironmentPar,true,true)&&
 			!collision_line(x+0.5*(addx/abs(addx)),y,x,y,layer_tilemap_get_id("Blocks"),true,true)&&
 			!place_meeting(x+0.5*(addx/abs(addx)),y,oEnvironmentPar)&&
-			!place_meeting(x+0.5*(addx/abs(addx)),y,layer_tilemap_get_id("Blocks"))
+			!place_meeting(x+0.5*(addx/abs(addx)),y,layer_tilemap_get_id("Blocks"))&&
+			bbox_right+addx<=room_width&&
+			bbox_left-addx>=0
 		) {
 			x += 0.5*(addx/abs(addx));
 		}
@@ -36,12 +40,16 @@ if (addx != 0 || addy != 0){
 	if(collision_line(x,y+addy,x,y,oEnvironmentPar,true,true)||
 		collision_line(x,y+addy,x,y,layer_tilemap_get_id("Blocks"),true,true)||
 		place_meeting(x,y+addy,oEnvironmentPar)||
-		place_meeting(x,y+addy,layer_tilemap_get_id("Blocks"))
+		place_meeting(x,y+addy,layer_tilemap_get_id("Blocks"))||
+		bbox_bottom+addy>room_height||
+		bbox_top-addy<0
 	) {
 		while (!collision_line(x,y+0.5*(addy/abs(addy)),x,y,oEnvironmentPar,true,true)&&
 			!collision_line(x,y+0.5*(addy/abs(addy)),x,y,layer_tilemap_get_id("Blocks"),true,true)&&
 			!place_meeting(x,y+0.5*(addy/abs(addy)),oEnvironmentPar)&&
-			!place_meeting(x,y+0.5*(addy/abs(addy)),layer_tilemap_get_id("Blocks"))
+			!place_meeting(x,y+0.5*(addy/abs(addy)),layer_tilemap_get_id("Blocks"))&&
+			bbox_bottom+addy<=room_height&&
+			bbox_top-addy>=0
 		) {
 			y += 0.5*(addy/abs(addy));
 		}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"removeLine",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"removeLine",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

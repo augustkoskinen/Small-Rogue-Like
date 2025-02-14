@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"lineToEdge",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"lineToEdge",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

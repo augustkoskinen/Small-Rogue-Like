@@ -32,7 +32,7 @@ if(global.started) {
 		}
 	} else if(mouse_check_button(mb_left)&&usecooldown<=0&&tilemap_get_at_pixel(layer_tilemap_get_id("Blocks"),x,y)==0) {
 		attackdir = point_direction(oPlayer.x+32,oPlayer.y+32,mouse_x,mouse_y)
-		usecooldown = attackingmax;
+		usecooldown = miningmax;
 	}
 	
 	

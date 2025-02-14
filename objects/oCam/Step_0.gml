@@ -1,11 +1,11 @@
 if(keyboard_check(ord("C"))) {
-	camera_set_view_size(view_camera[0],CamW*10,CamH*10);
+	camera_set_view_size(view_camera[0],CamFinalW*14,CamFinalH*14)
 } else {
-	camera_set_view_size(view_camera[0],CamW,CamH);
+	camera_set_view_size(view_camera[0],CamFinalW,CamFinalH);
 }
 
-CamW = camera_get_view_width(view_camera[0]);
-CamH = camera_get_view_height(view_camera[0]);
+var CamW = camera_get_view_width(view_camera[0]);
+var CamH = camera_get_view_height(view_camera[0]);
 
 
 x = lerp(x, oPlayer.x + oPlayer.sprite_width/2 - (CamW / 2), .05)
