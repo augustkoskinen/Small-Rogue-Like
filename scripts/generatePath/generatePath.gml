@@ -32,6 +32,7 @@ function generatePath(tsBlocks,tsFloorTiles,tilewidth,tileheight){
 		var ypos = 0;
 		
 		while(dist<spacing) {
+			
 			dist = 100000000000;
 			for(var i = 0; i< array_length(pointxlist); i++) {
 				var curdist = point_distance(xpos,ypos,array_get(pointxlist,i),array_get(pointylist,i))

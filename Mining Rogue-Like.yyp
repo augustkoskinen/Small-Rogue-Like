@@ -40,6 +40,7 @@
     {"id":{"name":"oGameControl","path":"objects/oGameControl/oGameControl.yy",},},
     {"id":{"name":"oLightingManager","path":"objects/oLightingManager/oLightingManager.yy",},},
     {"id":{"name":"oLightPar","path":"objects/oLightPar/oLightPar.yy",},},
+    {"id":{"name":"oMainHand","path":"objects/oMainHand/oMainHand.yy",},},
     {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},},
     {"id":{"name":"oSurfaceControl","path":"objects/oSurfaceControl/oSurfaceControl.yy",},},
     {"id":{"name":"oTarget","path":"objects/oTarget/oTarget.yy",},},

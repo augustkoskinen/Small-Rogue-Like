@@ -23,6 +23,7 @@
     {"name":"oGameControl","order":4,"path":"objects/oGameControl/oGameControl.yy",},
     {"name":"oLightingManager","order":8,"path":"objects/oLightingManager/oLightingManager.yy",},
     {"name":"oLightPar","order":7,"path":"objects/oLightPar/oLightPar.yy",},
+    {"name":"oMainHand","order":9,"path":"objects/oMainHand/oMainHand.yy",},
     {"name":"oSurfaceControl","order":6,"path":"objects/oSurfaceControl/oSurfaceControl.yy",},
     {"name":"oTarget","order":3,"path":"objects/oTarget/oTarget.yy",},
     {"name":"drawCirc","order":1,"path":"scripts/drawCirc/drawCirc.yy",},
