@@ -19,6 +19,10 @@ function generatePath(tsBlocks,tsFloorTiles,tilewidth,tileheight){
 	var tileendx = tilestartx+lengthdir_x(lenend,dirend);
 	var tileendy = tilestarty+lengthdir_y(lenend,dirend);
 	
+	for(var i = 7; i < 11; i++) {
+		generateColorTrans(tsBlocks,tileendx,tileendy,round(200*(12-i)/5)+irandom_range(10,-10),round(i))
+	}
+
 	array_push(pointxlist,tilestartx);
 	array_push(pointylist,tilestarty);
 	drawCirc(10,tilestartx,tilestarty,tsFloorTiles,5)
@@ -92,6 +96,13 @@ function generatePath(tsBlocks,tsFloorTiles,tilewidth,tileheight){
 			array_get(pointxlist,i2),
 			array_get(pointylist,i2)
 		,irandom_range(2,6),tsBlocks,4,4)
+		
+		generateColorTrans(tsBlocks,
+			array_get(pointxlist,i2),
+			array_get(pointylist,i2),
+			30,
+			getAvgColor(tsBlocks,array_get(pointxlist,i2),array_get(pointylist,i2),30)+1
+		)
 	}
 	
 	removeTips(tsBlocks);

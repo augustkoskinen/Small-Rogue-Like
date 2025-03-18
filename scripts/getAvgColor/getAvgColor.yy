@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"getAvgColor",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"getAvgColor",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
