@@ -1,6 +1,7 @@
 offsetx = 40;
-offsety = 10;
+offsety = -16;
 idlerot = 45;
+attacking = false;
 
 image_speed = 0
 
@@ -11,13 +12,13 @@ curset = -1;
 curtime = -1;
 attackset = [//set id, set info
 	//0 (basic)
-	[//time, xpos, ypos, apparent angle, flipside
-		[0, 0, 0, idlerot]
+	[//time, xpos, ypos, apparent angle, dmg frame
+		[0, 0, 0, idlerot, false]
 	],
 	[//1 (sword 1)
-		[0.10, -8, -16, 110],
-		[0.20, 16, 0, 15],
-		[0.60, 0, 0, idlerot]
+		[0.10, -8, -16, 110, false],
+		[0.20, 16, 0, 15, true],
+		[0.60, 0, 0, idlerot, false]
 	],
 ];
 
@@ -63,6 +64,7 @@ function getPos(set, inptime) {
 			array_get(prevset,3),
 			array_get(curset,3),
 			ratio
-		)
+		),
+		attacking: array_get(curset,4)
 	};
 }

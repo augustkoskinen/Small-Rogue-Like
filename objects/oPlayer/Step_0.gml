@@ -9,7 +9,7 @@ if(global.started) {
 	if(rl!=0) lrdir = rl;
 }
 
-mousedir = point_direction(x+32,y+32,mouse_x,mouse_y) > 90 && point_direction(x+32,y+32,mouse_x,mouse_y) < 270 ? -1 : 1;
+mousedir = point_direction(x,y-32,mouse_x,mouse_y) > 90 && point_direction(x,y-32,mouse_x,mouse_y) < 270 ? -1 : 1;
 
 var addx = 0;
 var addy = 0;

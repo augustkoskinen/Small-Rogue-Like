@@ -12,5 +12,5 @@ function getAvgColor(map, _x, _y, rad){
 		}
 	}
 	
-	return total/count;
+	return ceil(total/count);
 }

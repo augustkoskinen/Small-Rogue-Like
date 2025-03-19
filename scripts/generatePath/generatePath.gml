@@ -1,5 +1,6 @@
 function generatePath(tsBlocks,tsFloorTiles,tilewidth,tileheight){
 	var placeboundary = 60;
+	var placeboundaryend = 200;
 	
 	
 	setType(tsBlocks,6);
@@ -15,7 +16,7 @@ function generatePath(tsBlocks,tsFloorTiles,tilewidth,tileheight){
 	
 	var dirend = dirstart+180+irandom_range(-placeboundary,placeboundary)
 	var lenmax = lineToMin(dirend,tilestartx,tilestarty,0,0,tilewidth,tileheight);
-	var lenend = irandom_range(lenmax-placeboundary*1.5,lenmax-placeboundary*1.5+10);
+	var lenend = irandom_range(lenmax-placeboundaryend,lenmax-placeboundaryend-50);
 	var tileendx = tilestartx+lengthdir_x(lenend,dirend);
 	var tileendy = tilestarty+lengthdir_y(lenend,dirend);
 	
@@ -82,6 +83,13 @@ function generatePath(tsBlocks,tsFloorTiles,tilewidth,tileheight){
 		sourcerad = targetrad;
 	}
 	
+	removeLine(
+		array_get(pointxlist,2),
+		array_get(pointylist,2),
+		array_get(pointxlist,4),
+		array_get(pointylist,4)
+	,irandom_range(2,6),tsBlocks,4,4)
+		
 	repeat(irandom_range(4,8)) {
 		var i1 = irandom_range(0,array_length(pointxlist)-1);
 		
@@ -97,6 +105,7 @@ function generatePath(tsBlocks,tsFloorTiles,tilewidth,tileheight){
 			array_get(pointylist,i2)
 		,irandom_range(2,6),tsBlocks,4,4)
 		
+		show_debug_message(getAvgColor(tsBlocks,array_get(pointxlist,i2),array_get(pointylist,i2),30))
 		generateColorTrans(tsBlocks,
 			array_get(pointxlist,i2),
 			array_get(pointylist,i2),
