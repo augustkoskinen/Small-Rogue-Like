@@ -1,5 +1,5 @@
-function removeLine(x1,y1,x2,y2,rad,ts,sourcerad,targetrad) {
-	var safetyreps = 1000;
+function removeLine(x1,y1,x2,y2,rad,ts,tsfloor,sourcerad,targetrad) {
+	var safetyreps = 2000;
 	var turnstep = 10;
 	var turnmax = 120;
 	var step = 2;
@@ -8,7 +8,7 @@ function removeLine(x1,y1,x2,y2,rad,ts,sourcerad,targetrad) {
 	var curx = x1;
 	var cury = y1;
 	
-	var probstep = 0.02;
+	var probstep = 0.005;
 	var prob = 0;
 	var enddist = targetrad;
 	
@@ -24,7 +24,6 @@ function removeLine(x1,y1,x2,y2,rad,ts,sourcerad,targetrad) {
 	var countrad = 0;
 	var prevx = x1;
 	var prevy = y1;
-	show_debug_message("===============")
 	
 	var breakloop = false;
 	while((point_distance(x2,y2,curx,cury)>enddist)&&safetyreps>0) {
@@ -78,5 +77,46 @@ function removeLine(x1,y1,x2,y2,rad,ts,sourcerad,targetrad) {
 		turnstep = min(turnstep, probstep*20*4+turnstep);
 		dir = point_direction(curx,cury,x2,y2) + irandom_range(90,-90)*((point_distance(x2,y2,curx,cury)>nearenddist) ? (1-min(1,prob)) : (5/90));
 		safetyreps--;
+	}
+	
+	
+	var col1 = getAvgColor(ts,x1,y1,30)+1
+	var col2 = getAvgColor(ts,x2,y2,30)+1
+	var scalar = 1;
+	
+	for(var i = 2; i <= col1; i++) {
+		generateColorTrans(ts,
+			x1,
+			y1,
+			sourcerad*scalar*col1/i+4,
+			col1,
+			2
+		)
+		
+		generateColorTrans(tsfloor,
+			x1,
+			y1,
+			sourcerad*scalar*col1/i,
+			col1,
+			2
+		)
+	}
+	
+	for(var i = 2; i <= col2; i++) {
+		generateColorTrans(ts,
+			x2,
+			y2,
+			targetrad*scalar*col2/i,
+			col2,
+			2
+		)
+		
+		generateColorTrans(tsfloor,
+			x2,
+			y2,
+			targetrad*scalar*col2/i,
+			col2,
+			2
+		)
 	}
 }

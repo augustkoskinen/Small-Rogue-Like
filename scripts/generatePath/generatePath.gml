@@ -3,7 +3,7 @@ function generatePath(tsBlocks,tsFloorTiles,tilewidth,tileheight){
 	var placeboundaryend = 200;
 	
 	
-	setType(tsBlocks,6);
+	setType(tsBlocks,1);
 	setType(tsFloorTiles,1);
 	
 	var pointxlist = array_create(0);
@@ -20,13 +20,14 @@ function generatePath(tsBlocks,tsFloorTiles,tilewidth,tileheight){
 	var tileendx = tilestartx+lengthdir_x(lenend,dirend);
 	var tileendy = tilestarty+lengthdir_y(lenend,dirend);
 	
-	for(var i = 7; i < 11; i++) {
-		generateColorTrans(tsBlocks,tileendx,tileendy,round(200*(12-i)/5)+irandom_range(10,-10),round(i))
+	for(var i = 1; i <= 7; i++) {
+		var rad = round(200*(12-i)/5)+irandom_range(10,-10)
+		generateColorTrans(tsBlocks,tileendx,tileendy,rad,round(i),15)
+		generateColorTrans(tsFloorTiles,tileendx,tileendy,rad,round(i),15)
 	}
 
 	array_push(pointxlist,tilestartx);
 	array_push(pointylist,tilestarty);
-	drawCirc(10,tilestartx,tilestarty,tsFloorTiles,5)
 	removeCirc(6,tilestartx,tilestarty,tsBlocks)
 	
 	repeat(irandom_range(4,6)) {
@@ -48,13 +49,10 @@ function generatePath(tsBlocks,tsFloorTiles,tilewidth,tileheight){
 		}
 		array_push(pointxlist,xpos)
 		array_push(pointylist,ypos)
-		
-		drawCirc(10,xpos,ypos,tsFloorTiles,4)
 	}
 	
 	array_push(pointxlist,tileendx);
 	array_push(pointylist,tileendy);
-	drawCirc(10,tileendx,tileendy,tsFloorTiles,3)
 	removeCirc(10,tileendx,tileendy,tsBlocks)
 	
 	var curi = array_length(pointxlist)-1;
@@ -77,20 +75,14 @@ function generatePath(tsBlocks,tsFloorTiles,tilewidth,tileheight){
 			array_get(pointylist,oldi),
 			array_get(pointxlist,curi),
 			array_get(pointylist,curi)
-		,tunnelrad,tsBlocks,sourcerad,targetrad
+		,tunnelrad,tsBlocks,tsFloorTiles,sourcerad,targetrad
 		)
 		
 		sourcerad = targetrad;
 	}
 	
-	removeLine(
-		array_get(pointxlist,2),
-		array_get(pointylist,2),
-		array_get(pointxlist,4),
-		array_get(pointylist,4)
-	,irandom_range(2,6),tsBlocks,4,4)
-		
-	repeat(irandom_range(4,8)) {
+	var reps = irandom_range(4,8)
+	for(var i = 0; i < reps; i++) {
 		var i1 = irandom_range(0,array_length(pointxlist)-1);
 		
 		var i2 = i1;
@@ -98,20 +90,20 @@ function generatePath(tsBlocks,tsFloorTiles,tilewidth,tileheight){
 			i2 = irandom_range(0,array_length(pointxlist)-1);
 		}
 		
+		if(i==0) {
+			i1 = 2;
+			i2 = 4;
+		}
+		
+		var rad1 = irandom_range(3,8);
+		var rad2 = irandom_range(3,8);
+		
 		removeLine(
 			array_get(pointxlist,i1),
 			array_get(pointylist,i1),
 			array_get(pointxlist,i2),
 			array_get(pointylist,i2)
-		,irandom_range(2,6),tsBlocks,4,4)
-		
-		show_debug_message(getAvgColor(tsBlocks,array_get(pointxlist,i2),array_get(pointylist,i2),30))
-		generateColorTrans(tsBlocks,
-			array_get(pointxlist,i2),
-			array_get(pointylist,i2),
-			30,
-			getAvgColor(tsBlocks,array_get(pointxlist,i2),array_get(pointylist,i2),30)+1
-		)
+		,irandom_range(2,6),tsBlocks,tsFloorTiles,rad1,rad2)
 	}
 	
 	removeTips(tsBlocks);

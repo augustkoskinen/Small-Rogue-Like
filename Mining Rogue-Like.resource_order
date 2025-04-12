@@ -41,7 +41,7 @@
     {"name":"sBlock","order":4,"path":"sprites/sBlock/sBlock.yy",},
     {"name":"sDebris","order":7,"path":"sprites/sDebris/sDebris.yy",},
     {"name":"sDestroy","order":2,"path":"sprites/sDestroy/sDestroy.yy",},
-    {"name":"sFloorTiles","order":6,"path":"sprites/sFloorTiles/sFloorTiles.yy",},
+    {"name":"sFloorTiles","order":10,"path":"sprites/sFloorTiles/sFloorTiles.yy",},
     {"name":"sGhost","order":9,"path":"sprites/sGhost/sGhost.yy",},
     {"name":"sLight","order":5,"path":"sprites/sLight/sLight.yy",},
     {"name":"sSword","order":8,"path":"sprites/sSword/sSword.yy",},

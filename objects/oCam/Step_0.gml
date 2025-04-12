@@ -1,4 +1,4 @@
-if(keyboard_check(ord("C"))) {
+if(keyboard_check(vk_space)) {
 	camera_set_view_size(view_camera[0],CamFinalW*14,CamFinalH*14)
 } else {
 	camera_set_view_size(view_camera[0],CamFinalW,CamFinalH);

@@ -1,6 +1,4 @@
-function generateColorTrans(map, _x, _y, rad, type){
-	var chance = 15;
-	
+function generateColorTrans(map, _x, _y, rad, type, chance){
 	for(var i = max(0,_x-rad-chance); i < min(tilemap_get_height(map),_x+rad+chance); i++) {
 		for(var j = max(0,_y-rad-chance); j < min(tilemap_get_width(map),_y+rad+chance); j++) {
 			var tile = tilemap_get(map,i,j);

@@ -1,5 +1,4 @@
 event_inherited();
 
-var pdir = point_direction(x,y,oPlayer.x,oPlayer.y);
-x += lengthdir_x(400*delta_time/1000000,pdir)
-y += lengthdir_y(400*delta_time/1000000,pdir)
+mp_grid_path(grid, path, x, y, oPlayer.x, oPlayer.y, true);
+path_start(path, movespeed*delta_time/1000000, path_action_stop, true)
